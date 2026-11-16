@@ -1,0 +1,46 @@
+{
+ "global 2048": {
+  "frame: #visible objects (0-6)": [
+   0.615119993686676,
+   0.3416000008583069
+  ],
+  "frame: visible colour/material/shape (13 yes/no)": [
+   0.9224246144294739,
+   0.676929235458374
+  ],
+  "video: total objects": [
+   0.7020000219345093,
+   0.3680000305175781
+  ],
+  "video: which attributes exist (13 yes/no)": [
+   0.8784615397453308,
+   0.651692271232605
+  ],
+  "video: #collisions (0-4+)": [
+   0.4820000231266022,
+   0.48600003123283386
+  ]
+ },
+ "grid2x2 8192": {
+  "frame: #visible objects (0-6)": [
+   0.5837599635124207,
+   0.3416000008583069
+  ],
+  "frame: visible colour/material/shape (13 yes/no)": [
+   0.9142953753471375,
+   0.676929235458374
+  ],
+  "video: total objects": [
+   0.734000027179718,
+   0.3680000305175781
+  ],
+  "video: which attributes exist (13 yes/no)": [
+   0.8367692232131958,
+   0.651692271232605
+  ],
+  "video: #collisions (0-4+)": [
+   0.4740000367164612,
+   0.48600003123283386
+  ]
+ }
+}

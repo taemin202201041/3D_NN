@@ -1,0 +1,81 @@
+START e28a_team_r18bow fixed s1 17:58:45
+[e28a_team_r18bow__fixed__s1__07c56ef1] done in 42.3s  val=0.4065  test=0.3875
+END e28a_team_r18bow fixed s1 17:59:32
+START e28a_team_r18bow position s1 17:59:32
+START e28a_team_r18bow swap s1 17:59:32
+START e28a_team_r18bow both s1 17:59:32
+[e28a_team_r18bow__swap__s1__c5e66fec] done in 75.1s  val=0.4038  test=0.3891
+END e28a_team_r18bow swap s1 18:00:50
+START e28a_team_r18bow relayout s1 18:00:50
+[e28a_team_r18bow__position__s1__875782a9] done in 77.6s  val=0.4015  test=0.4009
+END e28a_team_r18bow position s1 18:00:52
+START e28a_team_r18bow lstm s1 18:00:53
+[e28a_team_r18bow__both__s1__39aa3385] done in 78.3s  val=0.4011  test=0.3976
+END e28a_team_r18bow both s1 18:00:53
+START e28a_team_r18bow linear_rnn s1 18:00:53
+[e28a_team_r18bow__lstm__s1__0a42359c] done in 32.1s  val=0.4133  test=0.3985
+END e28a_team_r18bow lstm s1 18:01:27
+START e28a_team_r18bow relu_nopen s1 18:01:27
+[e28a_team_r18bow__linear_rnn__s1__471437b2] done in 51.4s  val=0.3958  test=0.3862
+END e28a_team_r18bow linear_rnn s1 18:01:47
+START e28a_team_r18bow question_only s1 18:01:47
+[e28a_team_r18bow__relayout__s1__f482c8f3] done in 79.9s  val=0.4058  test=0.3987
+END e28a_team_r18bow relayout s1 18:02:13
+START e28b_team_r50w2v fixed s1 18:02:13
+[e28a_team_r18bow__relu_nopen__s1__2a76bfbc] done in 52.1s  val=0.3998  test=0.3875
+END e28a_team_r18bow relu_nopen s1 18:02:22
+START e28b_team_r50w2v position s1 18:02:22
+[e28a_team_r18bow__question_only__s1__bf51154c] done in 83.1s  val=0.3556  test=0.3498
+END e28a_team_r18bow question_only s1 18:03:13
+START e28b_team_r50w2v swap s1 18:03:13
+[e28b_team_r50w2v__fixed__s1__15205b1a] done in 93.8s  val=0.3927  test=0.3776
+END e28b_team_r50w2v fixed s1 18:03:50
+START e28b_team_r50w2v both s1 18:03:50
+[e28b_team_r50w2v__position__s1__fa686f63] done in 104.2s  val=0.3875  test=0.3862
+END e28b_team_r50w2v position s1 18:04:10
+START e28b_team_r50w2v relayout s1 18:04:10
+[e28b_team_r50w2v__swap__s1__8204665e] done in 99.3s  val=0.3884  test=0.3878
+END e28b_team_r50w2v swap s1 18:04:56
+START e28b_team_r50w2v lstm s1 18:04:56
+[e28b_team_r50w2v__both__s1__4a9abccf] done in 124.9s  val=0.3911  test=0.3838
+END e28b_team_r50w2v both s1 18:05:59
+START e28b_team_r50w2v linear_rnn s1 18:05:59
+[e28b_team_r50w2v__lstm__s1__13603802] done in 62.9s  val=0.4025  test=0.3847
+END e28b_team_r50w2v lstm s1 18:06:02
+START e28b_team_r50w2v relu_nopen s1 18:06:02
+[e28b_team_r50w2v__relayout__s1__4a677ceb] done in 116.5s  val=0.3927  test=0.3776
+END e28b_team_r50w2v relayout s1 18:06:10
+START e28b_team_r50w2v question_only s1 18:06:10
+[e28b_team_r50w2v__linear_rnn__s1__7a04eca0] done in 82.5s  val=0.398  test=0.3835
+END e28b_team_r50w2v linear_rnn s1 18:07:25
+START e28a_team_r18bow fixed s2 18:07:25
+[e28b_team_r50w2v__relu_nopen__s1__585757c5] done in 97.7s  val=0.3887  test=0.3724
+END e28b_team_r50w2v relu_nopen s1 18:07:43
+START e28a_team_r18bow position s2 18:07:43
+[e28b_team_r50w2v__question_only__s1__7aa8982a] done in 149.2s  val=0.3551  test=0.338
+END e28b_team_r50w2v question_only s1 18:08:42
+START e28a_team_r18bow swap s2 18:08:43
+[e28a_team_r18bow__fixed__s2__f7b55d9f] done in 125.1s  val=0.4085  test=0.3915
+END e28a_team_r18bow fixed s2 18:09:33
+START e28a_team_r18bow both s2 18:09:33
+[e28a_team_r18bow__position__s2__388e7603] done in 129.4s  val=0.4078  test=0.3811
+END e28a_team_r18bow position s2 18:09:56
+START e28a_team_r18bow relayout s2 18:09:56
+[e28a_team_r18bow__swap__s2__dacf6d88] done in 116.4s  val=0.4087  test=0.3871
+END e28a_team_r18bow swap s2 18:10:42
+START e28a_team_r18bow lstm s2 18:10:42
+[e28a_team_r18bow__lstm__s2__8687a13c] done in 46.1s  val=0.4158  test=0.396
+END e28a_team_r18bow lstm s2 18:11:31
+START e28a_team_r18bow linear_rnn s2 18:11:31
+[e28a_team_r18bow__both__s2__f50335bb] done in 131.2s  val=0.4111  test=0.3835
+END e28a_team_r18bow both s2 18:11:48
+START e28a_team_r18bow relu_nopen s2 18:11:48
+[e28a_team_r18bow__relayout__s2__de329c39] done in 121.6s  val=0.4085  test=0.3915
+END e28a_team_r18bow relayout s2 18:12:01
+START e28a_team_r18bow question_only s2 18:12:01
+[e28a_team_r18bow__linear_rnn__s2__b4159d4a] done in 75.4s  val=0.386  test=0.3795
+END e28a_team_r18bow linear_rnn s2 18:12:49
+START e28b_team_r50w2v fixed s2 18:12:49
+[e28a_team_r18bow__relu_nopen__s2__33ece758] done in 87.5s  val=0.4035  test=0.3902
+END e28a_team_r18bow relu_nopen s2 18:13:18
+START e28b_team_r50w2v position s2 18:13:18

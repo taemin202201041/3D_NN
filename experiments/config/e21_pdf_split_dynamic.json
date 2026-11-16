@@ -1,0 +1,21 @@
+{
+ "experiment": "e21_pdf_split_dynamic",
+ "description": "PDF(팀) 기준: 정답 주석 + program 질문 + 화면 밖 가림, 4가지 유형 전부. 분할은 PDF 8쪽(학습 0-9999, 평가 10000-14999)에 맞춰 학습 0-8999 / 검증 9000-9999 / 평가 10000-14999. 격자에서 시작해 동적으로 이동(position, swap)한 정확도. 최소 거리 0.5 반발, 이동은 1 epoch부터.",
+ "set": {
+  "data.perception": "annotation",
+  "data.encoder": "none (annotation = refined image output)",
+  "data.question_encoding": "program_token_counts",
+  "data.mask_offscreen": true,
+  "data.question_types": ["descriptive", "explanatory", "predictive", "counterfactual"],
+  "data.train_scenes": [0, 9000],
+  "data.val_scenes": [9000, 10000],
+  "data.test_scenes": [10000, 15000],
+  "layout.dynamic.open_epoch": 1
+ },
+ "variants": [
+  {"name": "fixed", "layout.dynamic.method": "fixed"},
+  {"name": "position", "layout.dynamic.method": "position"},
+  {"name": "swap", "layout.dynamic.method": "swap"}
+ ],
+ "seeds": [1, 2, 3]
+}

@@ -1,0 +1,1 @@
+{"name": "st2_mrB2_seed29", "cond": "mrB2", "seed": 29, "epochs": 10, "train_acc": 1.0, "test_acc": 1.0, "acc_curve": [0.6109374761581421, 0.735156238079071, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], "seconds": 19.239909172058105, "nonzero_total": 550, "mask_edges": 550}

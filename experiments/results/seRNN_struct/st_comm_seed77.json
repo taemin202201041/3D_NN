@@ -1,0 +1,1 @@
+{"name": "st_comm_seed77", "cond": "comm", "seed": 77, "epochs": 10, "train_acc": 1.0, "test_acc": 1.0, "acc_curve": [0.6195312738418579, 0.751171886920929, 0.874218761920929, 1.0, 1.0, 0.743359386920929, 1.0, 1.0, 1.0, 1.0], "seconds": 20.397628784179688, "nonzero_offdiag": 9900, "nonzero_total": 10000, "mask_edges": 10000}

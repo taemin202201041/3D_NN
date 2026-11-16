@@ -1,0 +1,27 @@
+{
+ "experiment": "e08_grid_o1",
+ "description": "open_epoch 1 + epoch selection val_mean. 논문식 입력. fixed/position/swap x 구조(full, A/B2/B1 full/rand), 시드 3.",
+ "set": {
+  "data.perception": "resnet50_npy",
+  "data.question_encoding": "word2vec_mean",
+  "data.question_types": ["descriptive", "explanatory", "predictive", "counterfactual"],
+  "model.answer_mask": true,
+  "train.select": "val_mean",
+  "layout.dynamic.open_epoch": 1
+ },
+ "variants": [
+  {"name": "fixed_full", "layout.dynamic.method": "fixed"},
+  {"name": "position_full", "layout.dynamic.method": "position"},
+  {"name": "swap_full", "layout.dynamic.method": "swap"},
+  {"name": "fixed_A_full", "layout.dynamic.method": "fixed", "model.topology": "A_full"},
+  {"name": "position_A_full", "layout.dynamic.method": "position", "model.topology": "A_full"},
+  {"name": "swap_A_full", "layout.dynamic.method": "swap", "model.topology": "A_full"},
+  {"name": "fixed_B2_full", "layout.dynamic.method": "fixed", "model.topology": "B2_full"},
+  {"name": "position_B2_full", "layout.dynamic.method": "position", "model.topology": "B2_full"},
+  {"name": "swap_B2_full", "layout.dynamic.method": "swap", "model.topology": "B2_full"},
+  {"name": "fixed_B1_full", "layout.dynamic.method": "fixed", "model.topology": "B1_full"},
+  {"name": "position_B1_full", "layout.dynamic.method": "position", "model.topology": "B1_full"},
+  {"name": "swap_B1_full", "layout.dynamic.method": "swap", "model.topology": "B1_full"}
+ ],
+ "seeds": [1, 2, 3]
+}

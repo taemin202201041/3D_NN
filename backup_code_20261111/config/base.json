@@ -1,0 +1,108 @@
+{
+  "experiment": "base",
+  "team": "dynamic",
+  "seed": 1,
+  "paths": {
+    "clevrer_root": "../data_large_v1/data_large_v1",
+    "questions_dir": "questions",
+    "features_dir": "features",
+    "cache_dir": "cache",
+    "results_dir": "results",
+    "paper_dir": "data/clevrer_paper"
+  },
+  "data": {
+    "perception": "resnet18_features",
+    "encoder": "ResNet18 ImageNet, frozen, precomputed (25 frames x 512)",
+    "train_scenes": [
+      0,
+      2000
+    ],
+    "val_scenes": [
+      2000,
+      2500
+    ],
+    "test_scenes": [
+      2500,
+      3000
+    ],
+    "steps": 25,
+    "frame_sampling": "uniform",
+    "question_types": [
+      "descriptive"
+    ],
+    "question_encoding": "text_bag_of_words",
+    "question_at": "start",
+    "subsample": 1.0
+  },
+  "model": {
+    "units": 100,
+    "cell": "rnn",
+    "activation": "relu",
+    "init": "orthogonal",
+    "input_noise": 0.05,
+    "io": "all",
+    "io_nodes": 25,
+    "autapse_only": false,
+    "topology": "full",
+    "topology_cfg": {
+      "clusters": 4,
+      "gateways": 2,
+      "bridges": 1
+    },
+    "answer_mask": false,
+    "lags": 1,
+    "leak_alpha": null
+  },
+  "layout": {
+    "mode": "dynamic",
+    "kind": "grid",
+    "dim": 3,
+    "shape": {
+      "2": [
+        10,
+        10
+      ],
+      "3": [
+        5,
+        5,
+        4
+      ]
+    },
+    "spacing": 1.0,
+    "distance_norm": "mean1",
+    "seed": 0,
+    "dynamic": {
+      "method": "position",
+      "coord_lr": 0.01,
+      "open_epoch": 10,
+      "repulsion": 0.01,
+      "min_dist": 0.5,
+      "swaps_per_epoch": 10
+    }
+  },
+  "reg": {
+    "form": "dc",
+    "gamma": 0.03,
+    "eps": 1e-06
+  },
+  "train": {
+    "epochs": 60,
+    "batch": 256,
+    "optimizer": "adam",
+    "lr": 0.001,
+    "clipnorm": 1.0,
+    "select": "val_best"
+  },
+  "prune": {
+    "method": "none",
+    "keep_ratio": 1.0,
+    "from_run": null,
+    "retrain_epochs": 0,
+    "schedule": "oneshot",
+    "set_rewire": 0.1
+  },
+  "eval": {
+    "test": true,
+    "edge_threshold": 0.01
+  }
+}

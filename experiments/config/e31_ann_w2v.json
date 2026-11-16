@@ -1,0 +1,102 @@
+{
+ "experiment": "e31_ann_w2v",
+ "description": "[진단용] 주석 입력 + word2vec 평균 질문. 팀 설정(서술형만, 학습 0-1999 / 검증 2000-2499 / 평가 2500-2999). e30(program 질문)과 같은 14가지 비교. 이동은 첫 에포크부터.",
+ "set": {
+  "data.perception": "annotation",
+  "data.encoder": "none (annotation, diagnostic)",
+  "data.question_encoding": "word2vec_mean",
+  "data.train_scenes": [
+   0,
+   2000
+  ],
+  "data.val_scenes": [
+   2000,
+   2500
+  ],
+  "data.test_scenes": [
+   2500,
+   3000
+  ],
+  "data.question_types": [
+   "descriptive"
+  ],
+  "data.mask_offscreen": true,
+  "layout.dynamic.open_epoch": 1
+ },
+ "variants": [
+  {
+   "name": "fixed_full",
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "position_full",
+   "layout.dynamic.method": "position"
+  },
+  {
+   "name": "swap_full",
+   "layout.dynamic.method": "swap"
+  },
+  {
+   "name": "relayout_full",
+   "layout.dynamic.method": "relayout",
+   "layout.dynamic.open_epoch": 10
+  },
+  {
+   "name": "fixed_A",
+   "layout.dynamic.method": "fixed",
+   "model.topology": "A_full"
+  },
+  {
+   "name": "fixed_B2",
+   "layout.dynamic.method": "fixed",
+   "model.topology": "B2_full"
+  },
+  {
+   "name": "fixed_B1",
+   "layout.dynamic.method": "fixed",
+   "model.topology": "B1_full"
+  },
+  {
+   "name": "position_B2",
+   "layout.dynamic.method": "position",
+   "model.topology": "B2_full"
+  },
+  {
+   "name": "position_B1",
+   "layout.dynamic.method": "position",
+   "model.topology": "B1_full"
+  },
+  {
+   "name": "swap_B1",
+   "layout.dynamic.method": "swap",
+   "model.topology": "B1_full"
+  },
+  {
+   "name": "lstm",
+   "model.cell": "lstm",
+   "reg.form": "none",
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "linear_rnn",
+   "model.activation": "linear",
+   "reg.form": "none",
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "relu_nopen",
+   "reg.form": "none",
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "question_only",
+   "model.video_off": true,
+   "layout.dynamic.method": "fixed"
+  }
+ ],
+ "seeds": [
+  1,
+  2,
+  3
+ ]
+}

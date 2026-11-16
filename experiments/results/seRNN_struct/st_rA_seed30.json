@@ -1,0 +1,1 @@
+{"name": "st_rA_seed30", "cond": "rA", "seed": 30, "epochs": 10, "train_acc": 1.0, "test_acc": 1.0, "acc_curve": [0.7421875, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], "seconds": 9.961962223052979, "nonzero_offdiag": 1980, "nonzero_total": 2080, "mask_edges": 2080}

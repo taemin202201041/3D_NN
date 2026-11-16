@@ -1,0 +1,107 @@
+{
+ "experiment": "e30_ann_structure",
+ "description": "[진단용] 영상 입력의 병목(CNN 특징)을 제거한 주석 입력에서, 동적 이동 / 구조 마스크 / 비교 모델이 정확도를 바꾸는가. 팀 분할(학습 0-1999, 검증 2000-2499, 평가 2500-2999), 4유형, program 질문. 논문 비교용 숫자가 아님.",
+ "set": {
+  "data.perception": "annotation",
+  "data.encoder": "none (annotation, diagnostic)",
+  "data.question_encoding": "program_token_counts",
+  "data.train_scenes": [
+   0,
+   2000
+  ],
+  "data.val_scenes": [
+   2000,
+   2500
+  ],
+  "data.test_scenes": [
+   2500,
+   3000
+  ],
+  "data.question_types": [
+   "descriptive",
+   "explanatory",
+   "predictive",
+   "counterfactual"
+  ],
+  "data.mask_offscreen": true,
+  "model.answer_mask": true,
+  "train.select": "val_mean",
+  "layout.dynamic.open_epoch": 1
+ },
+ "variants": [
+  {
+   "name": "fixed_full",
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "position_full",
+   "layout.dynamic.method": "position"
+  },
+  {
+   "name": "swap_full",
+   "layout.dynamic.method": "swap"
+  },
+  {
+   "name": "relayout_full",
+   "layout.dynamic.method": "relayout",
+   "layout.dynamic.open_epoch": 10
+  },
+  {
+   "name": "fixed_A",
+   "layout.dynamic.method": "fixed",
+   "model.topology": "A_full"
+  },
+  {
+   "name": "fixed_B2",
+   "layout.dynamic.method": "fixed",
+   "model.topology": "B2_full"
+  },
+  {
+   "name": "fixed_B1",
+   "layout.dynamic.method": "fixed",
+   "model.topology": "B1_full"
+  },
+  {
+   "name": "position_B2",
+   "layout.dynamic.method": "position",
+   "model.topology": "B2_full"
+  },
+  {
+   "name": "position_B1",
+   "layout.dynamic.method": "position",
+   "model.topology": "B1_full"
+  },
+  {
+   "name": "swap_B1",
+   "layout.dynamic.method": "swap",
+   "model.topology": "B1_full"
+  },
+  {
+   "name": "lstm",
+   "model.cell": "lstm",
+   "reg.form": "none",
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "linear_rnn",
+   "model.activation": "linear",
+   "reg.form": "none",
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "relu_nopen",
+   "reg.form": "none",
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "question_only",
+   "model.video_off": true,
+   "layout.dynamic.method": "fixed"
+  }
+ ],
+ "seeds": [
+  1,
+  2,
+  3
+ ]
+}

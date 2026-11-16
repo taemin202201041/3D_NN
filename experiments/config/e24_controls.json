@@ -1,0 +1,18 @@
+{
+ "experiment": "e24_controls",
+ "description": "원인 분리 대조 실험. 입력(ResNet-50 / 주석) x 질문(word2vec 평균 / program 토큰) 네 칸을 같은 설정(4유형, answer_mask, val_mean, open_epoch 1, fixed full, 분할 0-1999/2000-2499/2500-2999)으로. 네 칸 중 ResNet+word2vec은 e08 fixed_full 재사용. 주석은 진단용으로만 쓰며 기준 모델이 아님.",
+ "set": {
+  "data.question_types": ["descriptive", "explanatory", "predictive", "counterfactual"],
+  "model.answer_mask": true,
+  "train.select": "val_mean",
+  "layout.dynamic.open_epoch": 1,
+  "layout.dynamic.method": "fixed",
+  "data.mask_offscreen": true
+ },
+ "variants": [
+  {"name": "ann_prog", "data.perception": "annotation", "data.encoder": "none (annotation, diagnostic)", "data.question_encoding": "program_token_counts"},
+  {"name": "ann_w2v", "data.perception": "annotation", "data.encoder": "none (annotation, diagnostic)", "data.question_encoding": "word2vec_mean"},
+  {"name": "r50_prog", "data.perception": "resnet50_npy", "data.encoder": "ResNet-50 pool5 2048", "data.question_encoding": "program_token_counts"}
+ ],
+ "seeds": [1, 2, 3]
+}

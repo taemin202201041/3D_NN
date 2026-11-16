@@ -1,0 +1,1 @@
+{"name": "st2_mA_seed3", "cond": "mA", "seed": 3, "epochs": 10, "train_acc": 1.0, "test_acc": 1.0, "acc_curve": [0.628125011920929, 0.760546863079071, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], "seconds": 11.387808322906494, "nonzero_total": 2080, "mask_edges": 2080}

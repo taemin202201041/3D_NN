@@ -1,0 +1,117 @@
+{
+ "experiment": "e02_requested",
+ "description": "좌표 방식 3 (fixed=격자 고정 / position=좌표 학습 / swap=자리 교환) x 연결 구조 7 (full, A/B2/B1 x full/rand), seed 3개, 서술형",
+ "set": {},
+ "variants": [
+  {
+   "name": "fixed_full",
+   "layout.dynamic.method": "fixed",
+   "model.topology": "full"
+  },
+  {
+   "name": "fixed_A_full",
+   "layout.dynamic.method": "fixed",
+   "model.topology": "A_full"
+  },
+  {
+   "name": "fixed_A_rand",
+   "layout.dynamic.method": "fixed",
+   "model.topology": "A_rand"
+  },
+  {
+   "name": "fixed_B2_full",
+   "layout.dynamic.method": "fixed",
+   "model.topology": "B2_full"
+  },
+  {
+   "name": "fixed_B2_rand",
+   "layout.dynamic.method": "fixed",
+   "model.topology": "B2_rand"
+  },
+  {
+   "name": "fixed_B1_full",
+   "layout.dynamic.method": "fixed",
+   "model.topology": "B1_full"
+  },
+  {
+   "name": "fixed_B1_rand",
+   "layout.dynamic.method": "fixed",
+   "model.topology": "B1_rand"
+  },
+  {
+   "name": "position_full",
+   "layout.dynamic.method": "position",
+   "model.topology": "full"
+  },
+  {
+   "name": "position_A_full",
+   "layout.dynamic.method": "position",
+   "model.topology": "A_full"
+  },
+  {
+   "name": "position_A_rand",
+   "layout.dynamic.method": "position",
+   "model.topology": "A_rand"
+  },
+  {
+   "name": "position_B2_full",
+   "layout.dynamic.method": "position",
+   "model.topology": "B2_full"
+  },
+  {
+   "name": "position_B2_rand",
+   "layout.dynamic.method": "position",
+   "model.topology": "B2_rand"
+  },
+  {
+   "name": "position_B1_full",
+   "layout.dynamic.method": "position",
+   "model.topology": "B1_full"
+  },
+  {
+   "name": "position_B1_rand",
+   "layout.dynamic.method": "position",
+   "model.topology": "B1_rand"
+  },
+  {
+   "name": "swap_full",
+   "layout.dynamic.method": "swap",
+   "model.topology": "full"
+  },
+  {
+   "name": "swap_A_full",
+   "layout.dynamic.method": "swap",
+   "model.topology": "A_full"
+  },
+  {
+   "name": "swap_A_rand",
+   "layout.dynamic.method": "swap",
+   "model.topology": "A_rand"
+  },
+  {
+   "name": "swap_B2_full",
+   "layout.dynamic.method": "swap",
+   "model.topology": "B2_full"
+  },
+  {
+   "name": "swap_B2_rand",
+   "layout.dynamic.method": "swap",
+   "model.topology": "B2_rand"
+  },
+  {
+   "name": "swap_B1_full",
+   "layout.dynamic.method": "swap",
+   "model.topology": "B1_full"
+  },
+  {
+   "name": "swap_B1_rand",
+   "layout.dynamic.method": "swap",
+   "model.topology": "B1_rand"
+  }
+ ],
+ "seeds": [
+  1,
+  2,
+  3
+ ]
+}

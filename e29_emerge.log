@@ -1,0 +1,17 @@
+START e29_emerge swap_g0.1 s1 18:06:42
+START e29_emerge swap_g0.3 s1 18:06:42
+[e29_emerge__swap_g0.3__s1__c21237a7] done in 134.2s  val=0.4011  test=0.3824
+END e29_emerge swap_g0.3 s1 18:08:59
+START e29_emerge swap_g1.0 s1 18:08:59
+[e29_emerge__swap_g0.1__s1__7196b55a] done in 137.5s  val=0.4022  test=0.3873
+END e29_emerge swap_g0.1 s1 18:09:02
+START e29_emerge position_g0.3 s1 18:09:02
+[e29_emerge__swap_g1.0__s1__3a195e13] done in 116.9s  val=0.402  test=0.3844
+END e29_emerge swap_g1.0 s1 18:10:59
+START e29_emerge both_g0.3 s1 18:10:59
+[e29_emerge__position_g0.3__s1__6a9cb8d1] done in 137.0s  val=0.4011  test=0.392
+END e29_emerge position_g0.3 s1 18:11:22
+START e29_emerge swap_g0.1 s2 18:11:22
+[e29_emerge__both_g0.3__s1__258f56c4] done in 140.1s  val=0.3991  test=0.3893
+END e29_emerge both_g0.3 s1 18:13:22
+START e29_emerge swap_g0.3 s2 18:13:22

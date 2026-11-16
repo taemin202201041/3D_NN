@@ -1,0 +1,34 @@
+{
+ "experiment": "e06_dynamic_paper_input",
+ "description": "동적 모델(position, swap)을 논문식 입력에서 시험. 시드 1개, 기본 open_epoch=10.",
+ "set": {
+  "data.perception": "resnet50_npy",
+  "data.encoder": "ResNet-50 ImageNet, frozen, pool5 2048 (25 frames, make_features_r50.py)",
+  "data.question_encoding": "word2vec_mean",
+  "data.question_types": [
+   "descriptive",
+   "explanatory",
+   "predictive",
+   "counterfactual"
+  ],
+  "model.answer_mask": true
+ },
+ "variants": [
+  {
+   "name": "position_full",
+   "layout.dynamic.method": "position"
+  },
+  {
+   "name": "swap_full",
+   "layout.dynamic.method": "swap"
+  },
+  {
+   "name": "position_A_full",
+   "layout.dynamic.method": "position",
+   "model.topology": "A_full"
+  }
+ ],
+ "seeds": [
+  1
+ ]
+}

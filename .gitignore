@@ -1,0 +1,17 @@
+# provided dataset and the team's copy of their repo (not ours to publish)
+data_large_v1/
+DeepLearning-research-main/
+
+# papers and slides as PDF, archives, office temp files
+*.pdf
+*.zip
+~$*
+
+# large input data and caches (features, annotations, question caches)
+experiments/data/
+experiments/cache/
+
+# python / node
+__pycache__/
+*.pyc
+node_modules/

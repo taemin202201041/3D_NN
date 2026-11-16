@@ -1,0 +1,37 @@
+{
+ "experiment": "e05_paper_input",
+ "description": "앞뒤를 CLEVRER 논문대로: ResNet-50 pool5 2048 x 25프레임, word2vec 평균(300), 4가지 질문 유형 전부, 유형별 답 후보 제한. 분할(0-1999/2000-2499/2500-2999)은 팀 설정 그대로.",
+ "set": {
+  "data.perception": "resnet50_npy",
+  "data.encoder": "ResNet-50 ImageNet, frozen, pool5 2048 (25 frames, make_features_r50.py)",
+  "data.question_encoding": "word2vec_mean",
+  "data.question_types": [
+   "descriptive",
+   "explanatory",
+   "predictive",
+   "counterfactual"
+  ],
+  "model.answer_mask": true,
+  "layout.dynamic.method": "fixed"
+ },
+ "variants": [
+  {
+   "name": "rnn_full"
+  },
+  {
+   "name": "lstm",
+   "model.cell": "lstm",
+   "reg.form": "none"
+  },
+  {
+   "name": "linear_rnn",
+   "model.activation": "linear",
+   "reg.form": "none"
+  }
+ ],
+ "seeds": [
+  1,
+  2,
+  3
+ ]
+}

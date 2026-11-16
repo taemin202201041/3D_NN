@@ -1,0 +1,20 @@
+{
+ "experiment": "e12_grid_features",
+ "description": "공간 특징: ResNet-50 마지막 합성곱 지도를 2x2 격자로 풀링(프레임당 8192). 개수와 존재가 오르는지. 대조군은 e11 drop06_dim64 (전역 2048). fixed full, 시드 5.",
+ "set": {
+  "data.perception": "resnet50_grid2",
+  "data.question_encoding": "word2vec_mean",
+  "data.question_types": ["descriptive", "explanatory", "predictive", "counterfactual"],
+  "model.answer_mask": true,
+  "train.select": "val_mean",
+  "layout.dynamic.open_epoch": 1,
+  "layout.dynamic.method": "fixed"
+ },
+ "variants": [
+  {"name": "grid_d06_dim64", "model.video_dropout": 0.6, "model.video_dim": 64},
+  {"name": "grid_d06_dim128", "model.video_dropout": 0.6, "model.video_dim": 128},
+  {"name": "grid_d06_dim256", "model.video_dropout": 0.6, "model.video_dim": 256},
+  {"name": "grid_dim64", "model.video_dim": 64}
+ ],
+ "seeds": [1, 2, 3, 4, 5]
+}

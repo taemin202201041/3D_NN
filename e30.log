@@ -1,0 +1,126 @@
+START e30_ann_structure fixed_full s1 18:13:30
+START e30_ann_structure position_full s1 18:13:30
+START e30_ann_structure swap_full s1 18:13:30
+START e30_ann_structure relayout_full s1 18:13:30
+[e30_ann_structure__fixed_full__s1__2642bb2e] done in 214.5s  val=0.5263  test=0.5239
+END e30_ann_structure fixed_full s1 18:17:08
+START e30_ann_structure fixed_A s1 18:17:08
+[e30_ann_structure__swap_full__s1__a03781c4] done in 215.1s  val=0.5188  test=0.5189
+[e30_ann_structure__relayout_full__s1__f6e42013] done in 215.1s  val=0.5274  test=0.5316
+END e30_ann_structure swap_full s1 18:17:08
+END e30_ann_structure relayout_full s1 18:17:08
+START e30_ann_structure fixed_B2 s1 18:17:08
+START e30_ann_structure fixed_B1 s1 18:17:08
+[e30_ann_structure__position_full__s1__39dd4ecc] done in 235.2s  val=0.5164  test=0.5165
+END e30_ann_structure position_full s1 18:17:28
+START e30_ann_structure position_B2 s1 18:17:28
+[e30_ann_structure__fixed_A__s1__de92c382] done in 211.7s  val=0.5198  test=0.5179
+END e30_ann_structure fixed_A s1 18:20:43
+START e30_ann_structure position_B1 s1 18:20:43
+[e30_ann_structure__fixed_B2__s1__ebaf3998] done in 211.5s  val=0.513  test=0.5089
+END e30_ann_structure fixed_B2 s1 18:20:44
+START e30_ann_structure swap_B1 s1 18:20:44
+[e30_ann_structure__fixed_B1__s1__e40b226e] done in 211.6s  val=0.5155  test=0.5118
+END e30_ann_structure fixed_B1 s1 18:20:44
+START e30_ann_structure lstm s1 18:20:44
+[e30_ann_structure__position_B2__s1__82da48e9] done in 236.7s  val=0.5088  test=0.5093
+END e30_ann_structure position_B2 s1 18:21:28
+START e30_ann_structure linear_rnn s1 18:21:28
+[e30_ann_structure__lstm__s1__ea6177d3] done in 85.8s  val=0.5135  test=0.5035
+END e30_ann_structure lstm s1 18:22:13
+START e30_ann_structure relu_nopen s1 18:22:13
+[e30_ann_structure__linear_rnn__s1__6b44cf67] done in 145.1s  val=0.4768  test=0.4728
+END e30_ann_structure linear_rnn s1 18:23:57
+START e30_ann_structure question_only s1 18:23:57
+[e30_ann_structure__swap_B1__s1__81f2556a] done in 223.4s  val=0.5167  test=0.5162
+END e30_ann_structure swap_B1 s1 18:24:31
+START e30_ann_structure fixed_full s2 18:24:31
+[e30_ann_structure__position_B1__s1__d0c0f5a3] done in 243.6s  val=0.5198  test=0.5147
+END e30_ann_structure position_B1 s1 18:24:51
+START e30_ann_structure position_full s2 18:24:51
+[e30_ann_structure__relu_nopen__s1__dabc6df7] done in 159.9s  val=0.484  test=0.4719
+END e30_ann_structure relu_nopen s1 18:24:57
+START e30_ann_structure swap_full s2 18:24:57
+[e30_ann_structure__question_only__s1__576053c3] done in 211.1s  val=0.4421  test=0.4335
+END e30_ann_structure question_only s1 18:27:32
+START e30_ann_structure relayout_full s2 18:27:32
+[e30_ann_structure__fixed_full__s2__3e8985d4] done in 210.2s  val=0.5194  test=0.5152
+END e30_ann_structure fixed_full s2 18:28:04
+START e30_ann_structure fixed_A s2 18:28:04
+[e30_ann_structure__swap_full__s2__8b4a158d] done in 211.1s  val=0.5186  test=0.5193
+END e30_ann_structure swap_full s2 18:28:31
+START e30_ann_structure fixed_B2 s2 18:28:32
+[e30_ann_structure__position_full__s2__9bb3641a] done in 231.2s  val=0.5161  test=0.5205
+END e30_ann_structure position_full s2 18:28:45
+START e30_ann_structure fixed_B1 s2 18:28:46
+[e30_ann_structure__relayout_full__s2__18d8a341] done in 211.4s  val=0.5188  test=0.5209
+END e30_ann_structure relayout_full s2 18:31:07
+START e30_ann_structure position_B2 s2 18:31:07
+[e30_ann_structure__fixed_A__s2__186edc2c] done in 211.2s  val=0.503  test=0.5045
+END e30_ann_structure fixed_A s2 18:31:39
+START e30_ann_structure position_B1 s2 18:31:39
+[e30_ann_structure__fixed_B2__s2__45ee8c2e] done in 210.1s  val=0.5137  test=0.5102
+END e30_ann_structure fixed_B2 s2 18:32:05
+START e30_ann_structure swap_B1 s2 18:32:05
+[e30_ann_structure__fixed_B1__s2__6e6ca857] done in 209.5s  val=0.5097  test=0.5067
+END e30_ann_structure fixed_B1 s2 18:32:19
+START e30_ann_structure lstm s2 18:32:19
+[e30_ann_structure__lstm__s2__ed00ffa2] done in 85.4s  val=0.5129  test=0.5018
+END e30_ann_structure lstm s2 18:33:48
+START e30_ann_structure linear_rnn s2 18:33:48
+[e30_ann_structure__position_B2__s2__a3be308c] done in 237.4s  val=0.513  test=0.5086
+END e30_ann_structure position_B2 s2 18:35:08
+START e30_ann_structure relu_nopen s2 18:35:08
+[e30_ann_structure__position_B1__s2__e232d5f2] done in 238.3s  val=0.51  test=0.5112
+END e30_ann_structure position_B1 s2 18:35:41
+START e30_ann_structure question_only s2 18:35:42
+[e30_ann_structure__swap_B1__s2__0436fce6] done in 216.4s  val=0.5099  test=0.5164
+END e30_ann_structure swap_B1 s2 18:35:45
+START e30_ann_structure fixed_full s3 18:35:46
+[e30_ann_structure__linear_rnn__s2__00dc7c04] done in 136.7s  val=0.4813  test=0.4801
+END e30_ann_structure linear_rnn s2 18:36:08
+START e30_ann_structure position_full s3 18:36:08
+[e30_ann_structure__relu_nopen__s2__afe3162b] done in 157.4s  val=0.4924  test=0.4888
+END e30_ann_structure relu_nopen s2 18:37:49
+START e30_ann_structure swap_full s3 18:37:49
+[e30_ann_structure__question_only__s2__a28c2149] done in 211.6s  val=0.4399  test=0.4393
+END e30_ann_structure question_only s2 18:39:17
+START e30_ann_structure relayout_full s3 18:39:17
+[e30_ann_structure__fixed_full__s3__a7be6f89] done in 211.4s  val=0.5215  test=0.5229
+END e30_ann_structure fixed_full s3 18:39:21
+START e30_ann_structure fixed_A s3 18:39:21
+[e30_ann_structure__position_full__s3__4c88c76f] done in 233.5s  val=0.5248  test=0.5246
+END e30_ann_structure position_full s3 18:40:05
+START e30_ann_structure fixed_B2 s3 18:40:05
+[e30_ann_structure__swap_full__s3__8af08bb2] done in 208.9s  val=0.5245  test=0.5221
+END e30_ann_structure swap_full s3 18:41:22
+START e30_ann_structure fixed_B1 s3 18:41:22
+[e30_ann_structure__relayout_full__s3__92882ac6] done in 209.6s  val=0.5215  test=0.5203
+END e30_ann_structure relayout_full s3 18:42:50
+START e30_ann_structure position_B2 s3 18:42:50
+[e30_ann_structure__fixed_A__s3__e3dc9d4f] done in 209.2s  val=0.5133  test=0.5104
+END e30_ann_structure fixed_A s3 18:42:53
+START e30_ann_structure position_B1 s3 18:42:54
+[e30_ann_structure__fixed_B2__s3__f727a591] done in 207.6s  val=0.5182  test=0.5193
+END e30_ann_structure fixed_B2 s3 18:43:37
+START e30_ann_structure swap_B1 s3 18:43:37
+[e30_ann_structure__fixed_B1__s3__9e1198ee] done in 208.5s  val=0.5087  test=0.5108
+END e30_ann_structure fixed_B1 s3 18:44:54
+START e30_ann_structure lstm s3 18:44:54
+[e30_ann_structure__lstm__s3__46928a2a] done in 85.6s  val=0.5115  test=0.5117
+END e30_ann_structure lstm s3 18:46:23
+START e30_ann_structure linear_rnn s3 18:46:24
+[e30_ann_structure__position_B2__s3__f5592540] done in 240.0s  val=0.522  test=0.5263
+END e30_ann_structure position_B2 s3 18:46:54
+START e30_ann_structure relu_nopen s3 18:46:54
+[e30_ann_structure__position_B1__s3__546bb0fc] done in 240.0s  val=0.5137  test=0.5151
+END e30_ann_structure position_B1 s3 18:46:57
+START e30_ann_structure question_only s3 18:46:57
+[e30_ann_structure__swap_B1__s3__72ea6fd9] done in 217.3s  val=0.5126  test=0.5102
+END e30_ann_structure swap_B1 s3 18:47:18
+[e30_ann_structure__linear_rnn__s3__f28b8dcb] done in 122.6s  val=0.4817  test=0.4767
+END e30_ann_structure linear_rnn s3 18:48:30
+[e30_ann_structure__relu_nopen__s3__5b6f405b] done in 121.8s  val=0.4938  test=0.4982
+END e30_ann_structure relu_nopen s3 18:48:59
+[e30_ann_structure__question_only__s3__e3321d43] done in 141.9s  val=0.4378  test=0.4346
+END e30_ann_structure question_only s3 18:49:23

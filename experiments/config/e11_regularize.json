@@ -1,0 +1,21 @@
+{
+ "experiment": "e11_regularize",
+ "description": "과적합 직접 억제: 영상 특징 dropout, weight decay. e10 dim2048과 같은 조건(fixed full, 시드 5)에서 비교.",
+ "set": {
+  "data.perception": "resnet50_npy",
+  "data.question_encoding": "word2vec_mean",
+  "data.question_types": ["descriptive", "explanatory", "predictive", "counterfactual"],
+  "model.answer_mask": true,
+  "train.select": "val_mean",
+  "layout.dynamic.open_epoch": 1,
+  "layout.dynamic.method": "fixed"
+ },
+ "variants": [
+  {"name": "drop03", "model.video_dropout": 0.3},
+  {"name": "drop06", "model.video_dropout": 0.6},
+  {"name": "wd1e4", "train.weight_decay": 0.0001},
+  {"name": "wd1e3", "train.weight_decay": 0.001},
+  {"name": "drop06_dim64", "model.video_dropout": 0.6, "model.video_dim": 64}
+ ],
+ "seeds": [1, 2, 3, 4, 5]
+}

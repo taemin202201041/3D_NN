@@ -1,0 +1,14 @@
+250/3000 videos (10s)
+500/3000 videos (17s)
+750/3000 videos (23s)
+1000/3000 videos (29s)
+1250/3000 videos (41s)
+1500/3000 videos (59s)
+1750/3000 videos (67s)
+2000/3000 videos (75s)
+2250/3000 videos (82s)
+2500/3000 videos (88s)
+2750/3000 videos (94s)
+3000/3000 videos (100s)
+3000 videos in 100s -> 0.03s/video, all 3000: about 2 min
+saved (3000, 25, 8192) nan: False

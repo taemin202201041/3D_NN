@@ -1,0 +1,21 @@
+{
+ "experiment": "e22_cnn_dynamic",
+ "description": "원래 버전(CNN): ResNet-50 영상 특징 + word2vec 질문, 4가지 유형 전부, 영상 dropout 0.6 + 64차원(e11의 최고 설정). 격자에서 시작해 최소 거리 0.5 반발로 동적 이동(position, swap), fixed가 기준. 이동은 1 epoch부터, epoch 선택은 val_mean.",
+ "set": {
+  "data.perception": "resnet50_npy",
+  "data.encoder": "ResNet-50 ImageNet, frozen, pool5 2048 (25 frames, make_features_r50.py)",
+  "data.question_encoding": "word2vec_mean",
+  "data.question_types": ["descriptive", "explanatory", "predictive", "counterfactual"],
+  "model.answer_mask": true,
+  "model.video_dropout": 0.6,
+  "model.video_dim": 64,
+  "train.select": "val_mean",
+  "layout.dynamic.open_epoch": 1
+ },
+ "variants": [
+  {"name": "fixed", "layout.dynamic.method": "fixed"},
+  {"name": "position", "layout.dynamic.method": "position"},
+  {"name": "swap", "layout.dynamic.method": "swap"}
+ ],
+ "seeds": [1, 2, 3, 4, 5]
+}

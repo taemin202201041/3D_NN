@@ -1,0 +1,1 @@
+{"name": "st_none_seed66", "cond": "none", "seed": 66, "epochs": 10, "train_acc": 1.0, "test_acc": 1.0, "acc_curve": [0.626953125, 0.7515624761581421, 0.7437499761581421, 0.8812500238418579, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], "seconds": 11.37581992149353, "nonzero_offdiag": 9900, "nonzero_total": 10000, "mask_edges": 10000}

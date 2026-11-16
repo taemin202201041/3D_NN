@@ -1,0 +1,17 @@
+{
+ "experiment": "e23_motion",
+ "description": "근본 해결 시도: ResNet-50은 겉모습만 담고 충돌/움직임이 없음(프로브). 픽셀에서 광학 흐름 움직임 특징(64/step)을 계산해 더함. 4가지 유형, word2vec 질문, dropout 없음, fixed full. 대조: e08 fixed_full(ResNet만), 움직임만.",
+ "set": {
+  "data.question_encoding": "word2vec_mean",
+  "data.question_types": ["descriptive", "explanatory", "predictive", "counterfactual"],
+  "model.answer_mask": true,
+  "train.select": "val_mean",
+  "layout.dynamic.open_epoch": 1,
+  "layout.dynamic.method": "fixed"
+ },
+ "variants": [
+  {"name": "r50_motion", "data.perception": "resnet50_motion", "data.encoder": "ResNet-50 pool5 2048 + Farneback flow 4x4 (64)"},
+  {"name": "motion_only", "data.perception": "motion_g4", "data.encoder": "Farneback flow 4x4 (64), no ResNet"}
+ ],
+ "seeds": [1, 2, 3]
+}

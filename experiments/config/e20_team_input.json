@@ -1,0 +1,18 @@
+{
+ "experiment": "e20_team_input",
+ "description": "팀 기준 입력: CLEVRER 정답 주석(물체 6칸 x 37, 25시점) + 질문 program 토큰 개수 + 화면 밖 물체 가림. 4가지 질문 유형. 분할은 영상 id 0-1999/2000-2499/2500-2999 (팀 README 기준 분할). 나머지는 base.json(팀 설정과 같음). 재현용: fixed full, LSTM, linear RNN.",
+ "set": {
+  "data.perception": "annotation",
+  "data.encoder": "none (annotation = refined image output)",
+  "data.question_encoding": "program_token_counts",
+  "data.mask_offscreen": true,
+  "data.question_types": ["descriptive", "explanatory", "predictive", "counterfactual"],
+  "layout.dynamic.method": "fixed"
+ },
+ "variants": [
+  {"name": "rnn_full"},
+  {"name": "lstm", "model.cell": "lstm", "reg.form": "none"},
+  {"name": "linear_rnn", "model.activation": "linear", "reg.form": "none"}
+ ],
+ "seeds": [1, 2, 3]
+}

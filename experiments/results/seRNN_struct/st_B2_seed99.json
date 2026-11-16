@@ -1,0 +1,1 @@
+{"name": "st_B2_seed99", "cond": "B2", "seed": 99, "epochs": 10, "train_acc": 1.0, "test_acc": 1.0, "acc_curve": [0.6304687261581421, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], "seconds": 13.883728265762329, "nonzero_offdiag": 450, "nonzero_total": 550, "mask_edges": 550}

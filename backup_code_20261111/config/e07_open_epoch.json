@@ -1,0 +1,46 @@
+{
+ "experiment": "e07_open_epoch",
+ "description": "좌표가 움직이기 시작하는 epoch(open_epoch) 1과 3 비교. 논문식 입력, full 연결, position과 swap, fixed는 기준.",
+ "set": {
+  "data.perception": "resnet50_npy",
+  "data.encoder": "ResNet-50 ImageNet, frozen, pool5 2048 (25 frames, make_features_r50.py)",
+  "data.question_encoding": "word2vec_mean",
+  "data.question_types": [
+   "descriptive",
+   "explanatory",
+   "predictive",
+   "counterfactual"
+  ],
+  "model.answer_mask": true
+ },
+ "variants": [
+  {
+   "name": "fixed_full",
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "position_o1",
+   "layout.dynamic.method": "position",
+   "layout.dynamic.open_epoch": 1
+  },
+  {
+   "name": "position_o3",
+   "layout.dynamic.method": "position",
+   "layout.dynamic.open_epoch": 3
+  },
+  {
+   "name": "swap_o1",
+   "layout.dynamic.method": "swap",
+   "layout.dynamic.open_epoch": 1
+  },
+  {
+   "name": "swap_o3",
+   "layout.dynamic.method": "swap",
+   "layout.dynamic.open_epoch": 3
+  }
+ ],
+ "seeds": [
+  1,
+  2
+ ]
+}

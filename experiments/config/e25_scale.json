@@ -1,0 +1,26 @@
+{
+ "experiment": "e25_scale",
+ "description": "15000개 전체(학습 0-8999, 검증 9000-9999, 테스트 10000-14999 = 공식 validation 영상) + 질문 인코딩 비교. 입력(주석: 진단용 / ResNet-50 영상) x 질문(word2vec 평균 / 단어 순서 positional / 코어가 단어를 읽는 seq_core / program 토큰). 4유형, 고정 격자, 전 결합.",
+ "set": {
+  "data.train_scenes": [0, 9000],
+  "data.val_scenes": [9000, 10000],
+  "data.test_scenes": [10000, 15000],
+  "data.question_types": ["descriptive", "explanatory", "predictive", "counterfactual"],
+  "data.mask_offscreen": true,
+  "model.answer_mask": true,
+  "train.select": "val_mean",
+  "layout.dynamic.open_epoch": 1,
+  "layout.dynamic.method": "fixed"
+ },
+ "variants": [
+  {"name": "ann_mean",   "data.perception": "annotation", "data.encoder": "none (annotation, diagnostic)", "data.question_encoding": "word2vec_mean"},
+  {"name": "ann_prog",   "data.perception": "annotation", "data.encoder": "none (annotation, diagnostic)", "data.question_encoding": "program_token_counts"},
+  {"name": "ann_pos",    "data.perception": "annotation", "data.encoder": "none (annotation, diagnostic)", "data.question_encoding": "word_seq", "model.q_encoder": "positional"},
+  {"name": "ann_seqcore","data.perception": "annotation", "data.encoder": "none (annotation, diagnostic)", "data.question_encoding": "word_seq", "model.q_encoder": "seq_core"},
+  {"name": "r50_mean",   "data.perception": "resnet50_all", "data.encoder": "ResNet-50 pool5 2048", "data.question_encoding": "word2vec_mean"},
+  {"name": "r50_prog",   "data.perception": "resnet50_all", "data.encoder": "ResNet-50 pool5 2048", "data.question_encoding": "program_token_counts"},
+  {"name": "r50_pos",    "data.perception": "resnet50_all", "data.encoder": "ResNet-50 pool5 2048", "data.question_encoding": "word_seq", "model.q_encoder": "positional"},
+  {"name": "r50_seqcore","data.perception": "resnet50_all", "data.encoder": "ResNet-50 pool5 2048", "data.question_encoding": "word_seq", "model.q_encoder": "seq_core"}
+ ],
+ "seeds": [1]
+}

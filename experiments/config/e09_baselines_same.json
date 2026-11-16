@@ -1,0 +1,20 @@
+{
+ "experiment": "e09_baselines_same",
+ "description": "e08과 같은 조건(논문식 입력, 4종류, open_epoch 1, 선택 val_mean)의 베이스라인: LSTM, linear RNN, 패널티 없는 ReLU RNN, 질문만 넣은 모델(영상 0).",
+ "set": {
+  "data.perception": "resnet50_npy",
+  "data.question_encoding": "word2vec_mean",
+  "data.question_types": ["descriptive", "explanatory", "predictive", "counterfactual"],
+  "model.answer_mask": true,
+  "train.select": "val_mean",
+  "layout.dynamic.open_epoch": 1,
+  "layout.dynamic.method": "fixed"
+ },
+ "variants": [
+  {"name": "lstm", "model.cell": "lstm", "reg.form": "none"},
+  {"name": "linear_rnn", "model.activation": "linear", "reg.form": "none"},
+  {"name": "relu_nopen", "reg.form": "none"},
+  {"name": "question_only", "model.video_off": true}
+ ],
+ "seeds": [1, 2, 3]
+}

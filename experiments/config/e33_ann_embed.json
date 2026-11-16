@@ -1,0 +1,103 @@
+{
+ "experiment": "e33_ann_embed",
+ "description": "[진단용 + 공정성 대조] 주석 입력 + 이 데이터셋(학습 장면 질문)으로 학습한 단어 임베딩의 평균(300차원, 답으로만 학습). w2v(범용 사전)와 program2(program 라벨 사용) 사이의 대조군. 팀 설정(서술형만).",
+ "set": {
+  "data.perception": "annotation",
+  "data.encoder": "none (annotation, diagnostic)",
+  "data.question_encoding": "word_seq",
+  "data.train_scenes": [
+   0,
+   2000
+  ],
+  "data.val_scenes": [
+   2000,
+   2500
+  ],
+  "data.test_scenes": [
+   2500,
+   3000
+  ],
+  "data.question_types": [
+   "descriptive"
+  ],
+  "data.mask_offscreen": true,
+  "layout.dynamic.open_epoch": 1,
+  "model.q_encoder": "mean_embed"
+ },
+ "variants": [
+  {
+   "name": "fixed_full",
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "position_full",
+   "layout.dynamic.method": "position"
+  },
+  {
+   "name": "swap_full",
+   "layout.dynamic.method": "swap"
+  },
+  {
+   "name": "relayout_full",
+   "layout.dynamic.method": "relayout",
+   "layout.dynamic.open_epoch": 10
+  },
+  {
+   "name": "fixed_A",
+   "layout.dynamic.method": "fixed",
+   "model.topology": "A_full"
+  },
+  {
+   "name": "fixed_B2",
+   "layout.dynamic.method": "fixed",
+   "model.topology": "B2_full"
+  },
+  {
+   "name": "fixed_B1",
+   "layout.dynamic.method": "fixed",
+   "model.topology": "B1_full"
+  },
+  {
+   "name": "position_B2",
+   "layout.dynamic.method": "position",
+   "model.topology": "B2_full"
+  },
+  {
+   "name": "position_B1",
+   "layout.dynamic.method": "position",
+   "model.topology": "B1_full"
+  },
+  {
+   "name": "swap_B1",
+   "layout.dynamic.method": "swap",
+   "model.topology": "B1_full"
+  },
+  {
+   "name": "lstm",
+   "model.cell": "lstm",
+   "reg.form": "none",
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "linear_rnn",
+   "model.activation": "linear",
+   "reg.form": "none",
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "relu_nopen",
+   "reg.form": "none",
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "question_only",
+   "model.video_off": true,
+   "layout.dynamic.method": "fixed"
+  }
+ ],
+ "seeds": [
+  1,
+  2,
+  3
+ ]
+}

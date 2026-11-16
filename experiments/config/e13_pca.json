@@ -1,0 +1,20 @@
+{
+ "experiment": "e13_pca",
+ "description": "학습되는 선형층 대신 PCA(학습 영상에서 고정)로 영상 특징을 줄여 처음부터 작은 입력으로 쓰기. 전역 2048 -> PCA 32/64, dropout 0/0.6. fixed full, 시드 5. 비교: e10 dim64, e11 drop06_dim64.",
+ "set": {
+  "data.perception": "resnet50_npy",
+  "data.question_encoding": "word2vec_mean",
+  "data.question_types": ["descriptive", "explanatory", "predictive", "counterfactual"],
+  "model.answer_mask": true,
+  "train.select": "val_mean",
+  "layout.dynamic.open_epoch": 1,
+  "layout.dynamic.method": "fixed"
+ },
+ "variants": [
+  {"name": "pca64", "data.pca_dim": 64},
+  {"name": "pca64_d06", "data.pca_dim": 64, "model.video_dropout": 0.6},
+  {"name": "pca32_d06", "data.pca_dim": 32, "model.video_dropout": 0.6},
+  {"name": "pca128_d06", "data.pca_dim": 128, "model.video_dropout": 0.6}
+ ],
+ "seeds": [1, 2, 3, 4, 5]
+}

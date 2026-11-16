@@ -1,0 +1,75 @@
+{
+ "experiment": "e28b_team_r50w2v",
+ "description": "팀 설정(3000개 영상, 서술형만, 같은 분할). 입력: ResNet-50 2048 25프레임 + word2vec 평균 질문 = 논문식 입력. 동적 이동 4방식 + 비교 모델 4개.",
+ "set": {
+  "data.train_scenes": [
+   0,
+   2000
+  ],
+  "data.val_scenes": [
+   2000,
+   2500
+  ],
+  "data.test_scenes": [
+   2500,
+   3000
+  ],
+  "data.question_types": [
+   "descriptive"
+  ],
+  "layout.dynamic.open_epoch": 1,
+  "data.perception": "resnet50_npy",
+  "data.encoder": "ResNet-50 pool5 2048",
+  "data.question_encoding": "word2vec_mean"
+ },
+ "variants": [
+  {
+   "name": "fixed",
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "position",
+   "layout.dynamic.method": "position"
+  },
+  {
+   "name": "swap",
+   "layout.dynamic.method": "swap"
+  },
+  {
+   "name": "both",
+   "layout.dynamic.method": "both"
+  },
+  {
+   "name": "relayout",
+   "layout.dynamic.method": "relayout",
+   "layout.dynamic.open_epoch": 10
+  },
+  {
+   "name": "lstm",
+   "model.cell": "lstm",
+   "reg.form": "none",
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "linear_rnn",
+   "model.activation": "linear",
+   "reg.form": "none",
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "relu_nopen",
+   "reg.form": "none",
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "question_only",
+   "model.video_off": true,
+   "layout.dynamic.method": "fixed"
+  }
+ ],
+ "seeds": [
+  1,
+  2,
+  3
+ ]
+}

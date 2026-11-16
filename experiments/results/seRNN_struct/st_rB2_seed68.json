@@ -1,0 +1,1 @@
+{"name": "st_rB2_seed68", "cond": "rB2", "seed": 68, "epochs": 10, "train_acc": 0.999804675579071, "test_acc": 1.0, "acc_curve": [0.7457031011581421, 0.8671875, 0.8671875, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], "seconds": 11.538374185562134, "nonzero_offdiag": 450, "nonzero_total": 550, "mask_edges": 550}

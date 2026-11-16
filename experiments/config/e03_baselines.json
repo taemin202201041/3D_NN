@@ -1,0 +1,24 @@
+{
+ "experiment": "e03_baselines",
+ "description": "기준선: LSTM, 선형 RNN (구조·좌표·공간 벌점 없음). 비교는 같은 시드·분할·epoch의 e02 결과와 한다.",
+ "set": {
+  "reg.form": "none",
+  "layout.dynamic.method": "fixed",
+  "model.topology": "full"
+ },
+ "variants": [
+  {
+   "name": "lstm",
+   "model.cell": "lstm"
+  },
+  {
+   "name": "linear_rnn",
+   "model.activation": "linear"
+  }
+ ],
+ "seeds": [
+  1,
+  2,
+  3
+ ]
+}

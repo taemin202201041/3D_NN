@@ -1,0 +1,42 @@
+{
+ "experiment": "e04_data_size",
+ "description": "\ud559\uc2b5 \uc601\uc0c1 \uc218\ub97c \ubc14\uafd4 \uac00\uba70 \uc815\ud655\ub3c4 \uace1\uc120 \ud655\uc778 (fixed, full, \uacf5\uac04 \ubc8c\uc810 \uae30\ubcf8\uac12). \uac80\uc99d\u00b7\ud3c9\uac00\ub294 \uadf8\ub300\ub85c.",
+ "set": {
+  "layout.dynamic.method": "fixed"
+ },
+ "variants": [
+  {
+   "name": "n250",
+   "data.train_scenes": [
+    0,
+    250
+   ]
+  },
+  {
+   "name": "n500",
+   "data.train_scenes": [
+    0,
+    500
+   ]
+  },
+  {
+   "name": "n1000",
+   "data.train_scenes": [
+    0,
+    1000
+   ]
+  },
+  {
+   "name": "n2000",
+   "data.train_scenes": [
+    0,
+    2000
+   ]
+  }
+ ],
+ "seeds": [
+  1,
+  2,
+  3
+ ]
+}

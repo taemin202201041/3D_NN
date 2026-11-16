@@ -1,0 +1,20 @@
+{
+ "experiment": "e29_emerge",
+ "description": "구조 마스크 없이(전 결합) 공간 패널티를 키우고 교환 횟수를 늘리면 모듈/스몰월드가 저절로 생기는가. 팀 설정(서술형만, ResNet18 + 단어 묶음, 0-1999/2000-2499/2500-2999). 비교 기준: e02 fixed_full / swap_full / position_full (gamma 0.03, 교환 10회).",
+ "set": {
+  "data.train_scenes": [0, 2000],
+  "data.val_scenes": [2000, 2500],
+  "data.test_scenes": [2500, 3000],
+  "data.question_types": ["descriptive"],
+  "layout.dynamic.open_epoch": 1,
+  "layout.dynamic.swaps_per_epoch": 40
+ },
+ "variants": [
+  {"name": "swap_g0.1", "layout.dynamic.method": "swap", "reg.gamma": 0.1},
+  {"name": "swap_g0.3", "layout.dynamic.method": "swap", "reg.gamma": 0.3},
+  {"name": "swap_g1.0", "layout.dynamic.method": "swap", "reg.gamma": 1.0},
+  {"name": "position_g0.3", "layout.dynamic.method": "position", "reg.gamma": 0.3},
+  {"name": "both_g0.3", "layout.dynamic.method": "both", "reg.gamma": 0.3}
+ ],
+ "seeds": [1, 2, 3]
+}

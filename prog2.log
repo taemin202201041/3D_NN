@@ -1,0 +1,100 @@
+START e32_ann_prog2 fixed_full s1 19:16:13
+START e32_ann_prog2 position_full s1 19:16:13
+START e32_ann_prog2 swap_full s1 19:16:13
+START e32_ann_prog2 relayout_full s1 19:16:13
+[e32_ann_prog2__swap_full__s1__493cd47b] done in 93.8s  val=0.4352  test=0.4434
+END e32_ann_prog2 swap_full s1 19:17:50
+START e32_ann_prog2 fixed_A s1 19:17:50
+[e32_ann_prog2__relayout_full__s1__e04c2634] done in 94.0s  val=0.4396  test=0.4382
+END e32_ann_prog2 relayout_full s1 19:17:50
+START e32_ann_prog2 fixed_B2 s1 19:17:50
+[e32_ann_prog2__fixed_full__s1__1f57adb7] done in 94.3s  val=0.4387  test=0.4347
+END e32_ann_prog2 fixed_full s1 19:17:51
+START e32_ann_prog2 fixed_B1 s1 19:17:51
+[e32_ann_prog2__position_full__s1__179ef7a9] done in 98.1s  val=0.434  test=0.4405
+END e32_ann_prog2 position_full s1 19:17:54
+START e32_ann_prog2 position_B2 s1 19:17:54
+[e32_ann_prog2__fixed_B1__s1__8c8b3446] done in 89.9s  val=0.4171  test=0.4278
+END e32_ann_prog2 fixed_B1 s1 19:19:24
+START e32_ann_prog2 position_B1 s1 19:19:24
+[e32_ann_prog2__fixed_B2__s1__962b896c] done in 91.7s  val=0.4298  test=0.4323
+END e32_ann_prog2 fixed_B2 s1 19:19:26
+START e32_ann_prog2 swap_B1 s1 19:19:26
+[e32_ann_prog2__fixed_A__s1__e92c9956] done in 96.4s  val=0.4323  test=0.4358
+END e32_ann_prog2 fixed_A s1 19:19:30
+START e32_ann_prog2 lstm s1 19:19:30
+[e32_ann_prog2__position_B2__s1__0289eba9] done in 97.1s  val=0.4238  test=0.4198
+END e32_ann_prog2 position_B2 s1 19:19:35
+START e32_ann_prog2 linear_rnn s1 19:19:35
+[e32_ann_prog2__lstm__s1__d66c2eae] done in 36.2s  val=0.4398  test=0.4411
+END e32_ann_prog2 lstm s1 19:20:10
+START e32_ann_prog2 relu_nopen s1 19:20:10
+[e32_ann_prog2__linear_rnn__s1__4e406790] done in 67.3s  val=0.3889  test=0.3934
+END e32_ann_prog2 linear_rnn s1 19:20:46
+START e32_ann_prog2 question_only s1 19:20:47
+[e32_ann_prog2__swap_B1__s1__6717ad16] done in 116.1s  val=0.4169  test=0.4331
+END e32_ann_prog2 swap_B1 s1 19:21:26
+START e32_ann_prog2 fixed_full s2 19:21:26
+[e32_ann_prog2__position_B1__s1__6f4321fc] done in 130.6s  val=0.4202  test=0.4342
+END e32_ann_prog2 position_B1 s1 19:21:39
+START e32_ann_prog2 position_full s2 19:21:39
+[e32_ann_prog2__relu_nopen__s1__6690681d] done in 106.6s  val=0.4322  test=0.4247
+END e32_ann_prog2 relu_nopen s1 19:22:01
+START e32_ann_prog2 swap_full s2 19:22:01
+[e32_ann_prog2__question_only__s1__103c4136] done in 172.8s  val=0.3139  test=0.3132
+END e32_ann_prog2 question_only s1 19:23:44
+START e32_ann_prog2 relayout_full s2 19:23:44
+[e32_ann_prog2__fixed_full__s2__e24f44b0] done in 159.4s  val=0.428  test=0.4385
+END e32_ann_prog2 fixed_full s2 19:24:10
+START e32_ann_prog2 fixed_A s2 19:24:11
+[e32_ann_prog2__position_full__s2__d781d4b3] done in 175.6s  val=0.4294  test=0.4423
+END e32_ann_prog2 position_full s2 19:24:39
+START e32_ann_prog2 fixed_B2 s2 19:24:39
+[e32_ann_prog2__swap_full__s2__64914937] done in 159.5s  val=0.4314  test=0.4303
+END e32_ann_prog2 swap_full s2 19:24:45
+START e32_ann_prog2 fixed_B1 s2 19:24:45
+[e32_ann_prog2__relayout_full__s2__822befde] done in 161.2s  val=0.426  test=0.4447
+END e32_ann_prog2 relayout_full s2 19:26:30
+START e32_ann_prog2 position_B2 s2 19:26:30
+[e32_ann_prog2__fixed_A__s2__2941436e] done in 171.5s  val=0.4338  test=0.4309
+END e32_ann_prog2 fixed_A s2 19:27:07
+START e32_ann_prog2 position_B1 s2 19:27:07
+[e32_ann_prog2__fixed_B1__s2__ae0f4027] done in 164.8s  val=0.4316  test=0.4298
+END e32_ann_prog2 fixed_B1 s2 19:27:35
+START e32_ann_prog2 swap_B1 s2 19:27:35
+[e32_ann_prog2__fixed_B2__s2__3d82fbb0] done in 171.3s  val=0.4371  test=0.4309
+END e32_ann_prog2 fixed_B2 s2 19:27:36
+START e32_ann_prog2 lstm s2 19:27:36
+[e32_ann_prog2__lstm__s2__370e195d] done in 64.4s  val=0.4402  test=0.4483
+END e32_ann_prog2 lstm s2 19:28:45
+START e32_ann_prog2 linear_rnn s2 19:28:45
+[e32_ann_prog2__position_B2__s2__edd1dd44] done in 183.1s  val=0.4276  test=0.4327
+END e32_ann_prog2 position_B2 s2 19:29:38
+START e32_ann_prog2 relu_nopen s2 19:29:38
+[e32_ann_prog2__position_B1__s2__c47af307] done in 181.5s  val=0.4352  test=0.4378
+END e32_ann_prog2 position_B1 s2 19:30:14
+START e32_ann_prog2 question_only s2 19:30:14
+[e32_ann_prog2__swap_B1__s2__06fdb815] done in 169.3s  val=0.4302  test=0.4383
+END e32_ann_prog2 swap_B1 s2 19:30:30
+START e32_ann_prog2 fixed_full s3 19:30:31
+[e32_ann_prog2__linear_rnn__s2__67eb5f5b] done in 106.5s  val=0.3921  test=0.4014
+END e32_ann_prog2 linear_rnn s2 19:30:37
+START e32_ann_prog2 position_full s3 19:30:37
+[e32_ann_prog2__relu_nopen__s2__ffa903b2] done in 125.3s  val=0.4247  test=0.4351
+END e32_ann_prog2 relu_nopen s2 19:31:49
+START e32_ann_prog2 swap_full s3 19:31:49
+[e32_ann_prog2__question_only__s2__1d47a91e] done in 180.4s  val=0.3101  test=0.3216
+END e32_ann_prog2 question_only s2 19:33:20
+START e32_ann_prog2 relayout_full s3 19:33:20
+[e32_ann_prog2__fixed_full__s3__d792f5f7] done in 174.4s  val=0.446  test=0.452
+END e32_ann_prog2 fixed_full s3 19:33:30
+START e32_ann_prog2 fixed_A s3 19:33:31
+[e32_ann_prog2__position_full__s3__5ebd5e14] done in 178.6s  val=0.4402  test=0.448
+END e32_ann_prog2 position_full s3 19:33:42
+START e32_ann_prog2 fixed_B2 s3 19:33:42
+[e32_ann_prog2__swap_full__s3__df55b34c] done in 159.4s  val=0.4483  test=0.4469
+END e32_ann_prog2 swap_full s3 19:34:34
+START e32_ann_prog2 fixed_B1 s3 19:34:34
+[e32_ann_prog2__relayout_full__s3__360c54c4] done in 164.4s  val=0.4434  test=0.4458
+END e32_ann_prog2 relayout_full s3 19:36:10
+START e32_ann_prog2 position_B2 s3 19:36:10
