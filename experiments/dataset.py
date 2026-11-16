@@ -79,14 +79,20 @@ def build_cache(cfg: dict, here: Path) -> Path:
     keep = lambda qs: [v for v in qs if v["scene_index"] in row_of]
     train_q, val_q = keep(train_q), keep(val_q)
     vocab = Q.build_vocab([train_q], program=enc_program)                # vocabulary from the training scenes only
-    samples = Q.encode_videos(train_q + val_q, vocab, row_of, w2v, program=enc_program)
+    extra = {}
+    if cfg["data"]["question_encoding"] == "word_seq":                   # word-order token ids (model.q_encoder = mean_embed / positional / seq_core)
+        seq_len = int(cfg["data"].get("seq_len", 48))
+        samples = Q.encode_videos_seq(train_q + val_q, vocab, row_of, seq_len)
+        extra = {"emb": np.zeros((len(vocab) + 2, 300), np.float32).tolist(), "seq_len": seq_len}   # only the table size is used by mean_embed
+    else:
+        samples = Q.encode_videos(train_q + val_q, vocab, row_of, w2v, program=enc_program)
     np.savez(out / "samples.npz", **samples)
     tr = np.asarray(video[: len(manifest["train"])], np.float32).reshape(-1, x0.shape[-1])
     meta = {"vocab": vocab, "classes": Q.CLASSES, "groups": Q.GROUPS, "qtypes": Q.QTYPES, "subtypes": Q.SUBTYPES,
             "scenes": scenes, "split_sizes": {k: len(manifest[k]) for k in MANIFEST_SPLITS},
             "feat_mean": tr.mean(0).tolist(), "feat_std": (tr.std(0) + 1e-6).tolist(), "steps": int(x0.shape[0]), "feat_dim": int(x0.shape[1]),
             "perception": perc.name, "encoder_settings": perc.settings, "n_samples": int(len(samples["y"])),
-            "built_seconds": round(time.time() - t0, 1)}
+            "built_seconds": round(time.time() - t0, 1), **extra}
     (out / "meta.json").write_text(json.dumps(meta, indent=1), encoding="utf-8")
     print(f"[cache] done: {out} ({time.time() - t0:.0f}s)", flush=True)
     return out

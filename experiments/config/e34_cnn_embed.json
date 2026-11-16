@@ -1,0 +1,76 @@
+{
+ "experiment": "e34_cnn_embed",
+ "description": "영상 입력(ResNet-50 25프레임) + 이 데이터셋으로 학습한 임베딩 평균. 팀 설정(서술형, 0-1999/2000-2499/2500-2999). e28b(w2v 평균)와 같은 조건 비교.",
+ "set": {
+  "data.train_scenes": [
+   0,
+   2000
+  ],
+  "data.val_scenes": [
+   2000,
+   2500
+  ],
+  "data.test_scenes": [
+   2500,
+   3000
+  ],
+  "data.question_types": [
+   "descriptive"
+  ],
+  "layout.dynamic.open_epoch": 1,
+  "data.perception": "resnet50_npy",
+  "data.encoder": "ResNet-50 pool5 2048",
+  "data.question_encoding": "word_seq",
+  "model.q_encoder": "mean_embed"
+ },
+ "variants": [
+  {
+   "name": "fixed",
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "position",
+   "layout.dynamic.method": "position"
+  },
+  {
+   "name": "swap",
+   "layout.dynamic.method": "swap"
+  },
+  {
+   "name": "both",
+   "layout.dynamic.method": "both"
+  },
+  {
+   "name": "relayout",
+   "layout.dynamic.method": "relayout",
+   "layout.dynamic.open_epoch": 10
+  },
+  {
+   "name": "lstm",
+   "model.cell": "lstm",
+   "reg.form": "none",
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "linear_rnn",
+   "model.activation": "linear",
+   "reg.form": "none",
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "relu_nopen",
+   "reg.form": "none",
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "question_only",
+   "model.video_off": true,
+   "layout.dynamic.method": "fixed"
+  }
+ ],
+ "seeds": [
+  1,
+  2,
+  3
+ ]
+}

@@ -1,0 +1,126 @@
+START e35_slots w2v_seRNN_shuf s1 20:07:43
+START e35_slots w2v_seRNN_enc16 s1 20:07:43
+START e35_slots w2v_seRNN_shuf_enc16 s1 20:07:43
+[e35_slots__w2v_seRNN_shuf__s1__01831b96] done in 240.6s  val=0.456  test=0.4673
+END e35_slots w2v_seRNN_shuf s1 20:11:50
+START e35_slots w2v_seRNN_shuf_pool16 s1 20:11:50
+[e35_slots__w2v_seRNN_shuf_enc16__s1__9726e26e] done in 248.0s  val=0.4649  test=0.4704
+END e35_slots w2v_seRNN_shuf_enc16 s1 20:11:58
+START e35_slots w2v_lstm_shuf s1 20:11:58
+[e35_slots__w2v_seRNN_enc16__s1__26fb9b58] done in 251.3s  val=0.4725  test=0.486
+END e35_slots w2v_seRNN_enc16 s1 20:12:01
+START e35_slots w2v_lstm_enc16 s1 20:12:01
+[e35_slots__w2v_lstm_shuf__s1__7ed36d9d] done in 83.8s  val=0.5051  test=0.5075
+END e35_slots w2v_lstm_shuf s1 20:13:27
+START e35_slots w2v_lstm_shuf_enc16 s1 20:13:27
+[e35_slots__w2v_lstm_enc16__s1__ecb8a509] done in 88.5s  val=0.4874  test=0.4973
+END e35_slots w2v_lstm_enc16 s1 20:13:36
+START e35_slots w2v_lstm_shuf_pool16 s1 20:13:36
+[e35_slots__w2v_lstm_shuf_enc16__s1__cea4188c] done in 91.4s  val=0.5218  test=0.5166
+END e35_slots w2v_lstm_shuf_enc16 s1 20:15:04
+START e35_slots emb_seRNN_shuf s1 20:15:04
+[e35_slots__w2v_lstm_shuf_pool16__s1__44ffbfa1] done in 90.6s  val=0.5049  test=0.5096
+END e35_slots w2v_lstm_shuf_pool16 s1 20:15:11
+START e35_slots emb_seRNN_enc16 s1 20:15:11
+[e35_slots__w2v_seRNN_shuf_pool16__s1__989c4352] done in 237.9s  val=0.4967  test=0.5004
+END e35_slots w2v_seRNN_shuf_pool16 s1 20:15:53
+START e35_slots emb_seRNN_shuf_enc16 s1 20:15:53
+[e35_slots__emb_seRNN_shuf__s1__23b513da] done in 259.7s  val=0.5102  test=0.5127
+END e35_slots emb_seRNN_shuf s1 20:19:28
+START e35_slots emb_seRNN_shuf_pool16 s1 20:19:28
+[e35_slots__emb_seRNN_enc16__s1__fcd19c5b] done in 269.1s  val=0.5464  test=0.5486
+END e35_slots emb_seRNN_enc16 s1 20:19:45
+START e35_slots emb_lstm_shuf s1 20:19:46
+[e35_slots__emb_seRNN_shuf_enc16__s1__b2220276] done in 267.7s  val=0.5093  test=0.5231
+END e35_slots emb_seRNN_shuf_enc16 s1 20:20:26
+START e35_slots emb_lstm_enc16 s1 20:20:26
+[e35_slots__emb_lstm_shuf__s1__af9dc47b] done in 97.6s  val=0.5336  test=0.542
+END e35_slots emb_lstm_shuf s1 20:21:28
+START e35_slots emb_lstm_shuf_enc16 s1 20:21:28
+[e35_slots__emb_lstm_enc16__s1__d771608b] done in 96.2s  val=0.5467  test=0.5497
+END e35_slots emb_lstm_enc16 s1 20:22:07
+START e35_slots emb_lstm_shuf_pool16 s1 20:22:07
+[e35_slots__emb_lstm_shuf_pool16__s1__51631d9f] done in 90.9s  val=0.5395  test=0.5362
+[e35_slots__emb_seRNN_shuf_pool16__s1__798f18eb] done in 248.6s  val=0.4982  test=0.4958
+END e35_slots emb_lstm_shuf_pool16 s1 20:23:43
+END e35_slots emb_seRNN_shuf_pool16 s1 20:23:43
+START e35_slots w2v_seRNN_enc16 s2 20:23:43
+START e35_slots w2v_seRNN_shuf s2 20:23:43
+[e35_slots__w2v_seRNN_shuf__s2__1634a7a9] done in 206.1s  val=0.4653  test=0.4802
+END e35_slots w2v_seRNN_shuf s2 20:27:14
+START e35_slots w2v_seRNN_shuf_enc16 s2 20:27:14
+[e35_slots__w2v_seRNN_enc16__s2__d366551e] done in 216.0s  val=0.4784  test=0.4893
+END e35_slots w2v_seRNN_enc16 s2 20:27:25
+START e35_slots w2v_seRNN_shuf_pool16 s2 20:27:25
+[e35_slots__w2v_seRNN_shuf_enc16__s2__faa5d17a] done in 192.1s  val=0.4562  test=0.4536
+END e35_slots w2v_seRNN_shuf_enc16 s2 20:30:32
+START e35_slots w2v_lstm_shuf s2 20:30:33
+[e35_slots__w2v_seRNN_shuf_pool16__s2__f139c6db] done in 191.4s  val=0.4598  test=0.4776
+END e35_slots w2v_seRNN_shuf_pool16 s2 20:30:42
+START e35_slots w2v_lstm_enc16 s2 20:30:42
+[e35_slots__w2v_lstm_shuf__s2__8bf6f412] done in 77.3s  val=0.5027  test=0.5107
+END e35_slots w2v_lstm_shuf s2 20:31:55
+START e35_slots w2v_lstm_shuf_enc16 s2 20:31:55
+[e35_slots__w2v_lstm_enc16__s2__6a8eb486] done in 85.2s  val=0.5029  test=0.4884
+END e35_slots w2v_lstm_enc16 s2 20:32:12
+START e35_slots w2v_lstm_shuf_pool16 s2 20:32:12
+[e35_slots__w2v_lstm_shuf_enc16__s2__2ac5a4ae] done in 91.7s  val=0.5142  test=0.5251
+END e35_slots w2v_lstm_shuf_enc16 s2 20:33:31
+START e35_slots emb_seRNN_shuf s2 20:33:31
+[e35_slots__w2v_lstm_shuf_pool16__s2__562f2dfb] done in 89.7s  val=0.5051  test=0.5189
+END e35_slots w2v_lstm_shuf_pool16 s2 20:33:46
+START e35_slots emb_seRNN_enc16 s2 20:33:46
+[e35_slots__emb_seRNN_shuf__s2__33a47448] done in 143.3s  val=0.51  test=0.5065
+END e35_slots emb_seRNN_shuf s2 20:35:58
+START e35_slots emb_seRNN_shuf_enc16 s2 20:35:58
+[e35_slots__emb_seRNN_enc16__s2__92fbd997] done in 139.8s  val=0.5291  test=0.5384
+END e35_slots emb_seRNN_enc16 s2 20:36:10
+START e35_slots emb_seRNN_shuf_pool16 s2 20:36:10
+[e35_slots__emb_seRNN_shuf_enc16__s2__de05c133] done in 104.1s  val=0.5022  test=0.5033
+END e35_slots emb_seRNN_shuf_enc16 s2 20:37:46
+START e35_slots emb_lstm_shuf s2 20:37:46
+[e35_slots__emb_seRNN_shuf_pool16__s2__7e873713] done in 105.7s  val=0.506  test=0.5069
+END e35_slots emb_seRNN_shuf_pool16 s2 20:37:59
+START e35_slots emb_lstm_enc16 s2 20:37:59
+[e35_slots__emb_lstm_shuf__s2__6e88f5bd] done in 37.2s  val=0.5453  test=0.5377
+END e35_slots emb_lstm_shuf s2 20:38:27
+START e35_slots emb_lstm_shuf_enc16 s2 20:38:27
+[e35_slots__emb_lstm_enc16__s2__fae4c4f9] done in 41.8s  val=0.5402  test=0.5438
+END e35_slots emb_lstm_enc16 s2 20:38:44
+START e35_slots emb_lstm_shuf_pool16 s2 20:38:44
+[e35_slots__emb_lstm_shuf_enc16__s2__42332842] done in 43.3s  val=0.5246  test=0.5387
+END e35_slots emb_lstm_shuf_enc16 s2 20:39:14
+START e35_slots w2v_seRNN_shuf s3 20:39:14
+[e35_slots__emb_lstm_shuf_pool16__s2__4cbc6ebb] done in 44.1s  val=0.5286  test=0.5364
+END e35_slots emb_lstm_shuf_pool16 s2 20:39:32
+START e35_slots w2v_seRNN_enc16 s3 20:39:32
+[e35_slots__w2v_seRNN_shuf__s3__3d3aaf78] done in 92.6s  val=0.4704  test=0.4915
+END e35_slots w2v_seRNN_shuf s3 20:40:50
+START e35_slots w2v_seRNN_shuf_enc16 s3 20:40:50
+[e35_slots__w2v_seRNN_enc16__s3__795699f5] done in 95.4s  val=0.478  test=0.4924
+END e35_slots w2v_seRNN_enc16 s3 20:41:11
+START e35_slots w2v_seRNN_shuf_pool16 s3 20:41:11
+[e35_slots__w2v_seRNN_shuf_enc16__s3__c01d8441] done in 65.4s  val=0.4698  test=0.4998
+END e35_slots w2v_seRNN_shuf_enc16 s3 20:41:59
+START e35_slots w2v_lstm_shuf s3 20:41:59
+[e35_slots__w2v_seRNN_shuf_pool16__s3__a469d165] done in 58.8s  val=0.4738  test=0.4884
+END e35_slots w2v_seRNN_shuf_pool16 s3 20:42:13
+START e35_slots w2v_lstm_enc16 s3 20:42:13
+[e35_slots__w2v_lstm_shuf__s3__64ccf0ae] done in 23.2s  val=0.5033  test=0.5176
+END e35_slots w2v_lstm_shuf s3 20:42:25
+START e35_slots w2v_lstm_shuf_enc16 s3 20:42:26
+[e35_slots__w2v_lstm_enc16__s3__baf6892c] done in 26.5s  val=0.4847  test=0.4949
+END e35_slots w2v_lstm_enc16 s3 20:42:43
+START e35_slots w2v_lstm_shuf_pool16 s3 20:42:43
+[e35_slots__w2v_lstm_shuf_enc16__s3__d11b4a31] done in 27.8s  val=0.5135  test=0.5238
+END e35_slots w2v_lstm_shuf_enc16 s3 20:42:57
+START e35_slots emb_seRNN_shuf s3 20:42:57
+[e35_slots__w2v_lstm_shuf_pool16__s3__25a52eaf] done in 27.4s  val=0.5053  test=0.522
+END e35_slots w2v_lstm_shuf_pool16 s3 20:43:14
+START e35_slots emb_seRNN_enc16 s3 20:43:14
+[e35_slots__emb_seRNN_shuf__s3__71ab6dbb] done in 58.0s  val=0.4973  test=0.4967
+END e35_slots emb_seRNN_shuf s3 20:43:58
+START e35_slots emb_seRNN_shuf_enc16 s3 20:43:58
+[e35_slots__emb_seRNN_enc16__s3__2b2c3d27] done in 60.2s  val=0.5266  test=0.5247
+END e35_slots emb_seRNN_enc16 s3 20:44:18
+START e35_slots emb_seRNN_shuf_pool16 s3 20:44:18

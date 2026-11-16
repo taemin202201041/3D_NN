@@ -1,0 +1,138 @@
+{
+ "schema": "clevrer-sernn/v1",
+ "run_id": "e35_slots__emb_lstm_shuf_enc16__s1__fa4f88c1",
+ "experiment": "e35_slots",
+ "team": "dynamic",
+ "timestamp": "2026-11-16T20:21:34",
+ "status": "failed",
+ "changed": {
+  "data.perception": "annotation",
+  "data.encoder": "none (annotation, diagnostic)",
+  "data.question_encoding": "word_seq",
+  "data.mask_offscreen": true,
+  "model.cell": "lstm",
+  "model.q_encoder": "mean_embed",
+  "model.slot_shuffle": true,
+  "model.obj_dim": 16,
+  "layout.dynamic.method": "fixed",
+  "layout.dynamic.open_epoch": 1,
+  "reg.form": "none"
+ },
+ "config": {
+  "experiment": "e35_slots",
+  "team": "dynamic",
+  "seed": 1,
+  "paths": {
+   "clevrer_root": "../data_large_v1/data_large_v1",
+   "questions_dir": "questions",
+   "features_dir": "features",
+   "cache_dir": "cache",
+   "results_dir": "results",
+   "paper_dir": "data/clevrer_paper"
+  },
+  "data": {
+   "perception": "annotation",
+   "encoder": "none (annotation, diagnostic)",
+   "train_scenes": [
+    0,
+    2000
+   ],
+   "val_scenes": [
+    2000,
+    2500
+   ],
+   "test_scenes": [
+    2500,
+    3000
+   ],
+   "steps": 25,
+   "frame_sampling": "uniform",
+   "question_types": [
+    "descriptive"
+   ],
+   "question_encoding": "word_seq",
+   "question_at": "start",
+   "subsample": 1.0,
+   "mask_offscreen": true
+  },
+  "model": {
+   "units": 100,
+   "cell": "lstm",
+   "activation": "relu",
+   "init": "orthogonal",
+   "input_noise": 0.05,
+   "io": "all",
+   "io_nodes": 25,
+   "autapse_only": false,
+   "topology": "full",
+   "topology_cfg": {
+    "clusters": 4,
+    "gateways": 2,
+    "bridges": 1
+   },
+   "answer_mask": false,
+   "lags": 1,
+   "leak_alpha": null,
+   "q_encoder": "mean_embed",
+   "slot_shuffle": true,
+   "obj_dim": 16
+  },
+  "layout": {
+   "mode": "dynamic",
+   "kind": "grid",
+   "dim": 3,
+   "shape": {
+    "2": [
+     10,
+     10
+    ],
+    "3": [
+     5,
+     5,
+     4
+    ]
+   },
+   "spacing": 1.0,
+   "distance_norm": "mean1",
+   "seed": 0,
+   "dynamic": {
+    "method": "fixed",
+    "coord_lr": 0.01,
+    "open_epoch": 1,
+    "repulsion": 0.01,
+    "min_dist": 0.5,
+    "swaps_per_epoch": 10
+   }
+  },
+  "reg": {
+   "form": "none",
+   "gamma": 0.03,
+   "eps": 1e-06
+  },
+  "train": {
+   "epochs": 60,
+   "batch": 256,
+   "optimizer": "adam",
+   "lr": 0.001,
+   "clipnorm": 1.0,
+   "select": "val_best"
+  },
+  "prune": {
+   "method": "none",
+   "keep_ratio": 1.0,
+   "from_run": null,
+   "retrain_epochs": 0,
+   "schedule": "oneshot",
+   "set_rewire": 0.1
+  },
+  "eval": {
+   "test": true,
+   "edge_threshold": 0.01
+  },
+  "name": "emb_lstm_shuf_enc16",
+  "run_id": "e35_slots__emb_lstm_shuf_enc16__s1__fa4f88c1"
+ },
+ "metrics": {},
+ "structure": {},
+ "note": "AcceleratorError(\"CUDA error: out of memory\\nSearch for `cudaErrorMemoryAllocation' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\\nCUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\\nFor debugging consider passing CUDA_LAUNCH_BLOCKING=1\\nCompile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\\n\")"
+}

@@ -1,0 +1,157 @@
+{
+ "experiment": "e35_slots",
+ "description": "[진단용] 주석 입력의 과적합 대응: 물체 슬롯 섞기 증강(shuf), 물체별 공통 인코더(enc16), 둘 다(shuf_enc16), 순서 무관 풀링(shuf_pool16). 질문 w2v 평균 / 학습형 임베딩, 코어 seRNN / LSTM. 팀 설정(서술형, 학습 0-1999). 비교 기준 = e31 / e33의 고정 실행.",
+ "set": {
+  "data.perception": "annotation",
+  "data.encoder": "none (annotation, diagnostic)",
+  "data.question_encoding": "word2vec_mean",
+  "data.train_scenes": [
+   0,
+   2000
+  ],
+  "data.val_scenes": [
+   2000,
+   2500
+  ],
+  "data.test_scenes": [
+   2500,
+   3000
+  ],
+  "data.question_types": [
+   "descriptive"
+  ],
+  "data.mask_offscreen": true,
+  "layout.dynamic.open_epoch": 1
+ },
+ "variants": [
+  {
+   "name": "w2v_seRNN_shuf",
+   "model.slot_shuffle": true,
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "w2v_seRNN_enc16",
+   "model.obj_dim": 16,
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "w2v_seRNN_shuf_enc16",
+   "model.slot_shuffle": true,
+   "model.obj_dim": 16,
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "w2v_seRNN_shuf_pool16",
+   "model.slot_shuffle": true,
+   "model.obj_dim": 16,
+   "model.obj_mode": "pool",
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "w2v_lstm_shuf",
+   "model.cell": "lstm",
+   "reg.form": "none",
+   "model.slot_shuffle": true,
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "w2v_lstm_enc16",
+   "model.cell": "lstm",
+   "reg.form": "none",
+   "model.obj_dim": 16,
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "w2v_lstm_shuf_enc16",
+   "model.cell": "lstm",
+   "reg.form": "none",
+   "model.slot_shuffle": true,
+   "model.obj_dim": 16,
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "w2v_lstm_shuf_pool16",
+   "model.cell": "lstm",
+   "reg.form": "none",
+   "model.slot_shuffle": true,
+   "model.obj_dim": 16,
+   "model.obj_mode": "pool",
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "emb_seRNN_shuf",
+   "data.question_encoding": "word_seq",
+   "model.q_encoder": "mean_embed",
+   "model.slot_shuffle": true,
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "emb_seRNN_enc16",
+   "data.question_encoding": "word_seq",
+   "model.q_encoder": "mean_embed",
+   "model.obj_dim": 16,
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "emb_seRNN_shuf_enc16",
+   "data.question_encoding": "word_seq",
+   "model.q_encoder": "mean_embed",
+   "model.slot_shuffle": true,
+   "model.obj_dim": 16,
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "emb_seRNN_shuf_pool16",
+   "data.question_encoding": "word_seq",
+   "model.q_encoder": "mean_embed",
+   "model.slot_shuffle": true,
+   "model.obj_dim": 16,
+   "model.obj_mode": "pool",
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "emb_lstm_shuf",
+   "data.question_encoding": "word_seq",
+   "model.q_encoder": "mean_embed",
+   "model.cell": "lstm",
+   "reg.form": "none",
+   "model.slot_shuffle": true,
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "emb_lstm_enc16",
+   "data.question_encoding": "word_seq",
+   "model.q_encoder": "mean_embed",
+   "model.cell": "lstm",
+   "reg.form": "none",
+   "model.obj_dim": 16,
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "emb_lstm_shuf_enc16",
+   "data.question_encoding": "word_seq",
+   "model.q_encoder": "mean_embed",
+   "model.cell": "lstm",
+   "reg.form": "none",
+   "model.slot_shuffle": true,
+   "model.obj_dim": 16,
+   "layout.dynamic.method": "fixed"
+  },
+  {
+   "name": "emb_lstm_shuf_pool16",
+   "data.question_encoding": "word_seq",
+   "model.q_encoder": "mean_embed",
+   "model.cell": "lstm",
+   "reg.form": "none",
+   "model.slot_shuffle": true,
+   "model.obj_dim": 16,
+   "model.obj_mode": "pool",
+   "layout.dynamic.method": "fixed"
+  }
+ ],
+ "seeds": [
+  1,
+  2,
+  3
+ ]
+}

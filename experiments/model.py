@@ -15,6 +15,23 @@ from questions import ALLOWED, N_CLASSES
 from rnn import RecurrentCore, penalty
 
 
+SLOTS, FEAT, PARTNER0, PRESENT = 6, 37, 14, 23       # annotation input: 6 object slots x 37 features per step (perception.py)
+
+
+def permute_slots(video, order=None):
+    """video [B, T, 6*37] -> the 6 object slots in a random order per sample (the same order at every time step).
+    partner0..5 are columns that NAME slots, so they are re-ordered with the same permutation.  new slot i = old slot order[i]."""
+    B, T, _ = video.shape
+    x = video.reshape(B, T, SLOTS, FEAT)
+    if order is None:
+        order = torch.argsort(torch.rand(B, SLOTS, device=video.device), dim=1)
+    x = torch.gather(x, 2, order[:, None, :, None].expand(B, T, SLOTS, FEAT))
+    pc = x[..., PARTNER0:PARTNER0 + SLOTS]
+    pc = torch.gather(pc, 3, order[:, None, None, :].expand(B, T, SLOTS, SLOTS))
+    x = torch.cat([x[..., :PARTNER0], pc, x[..., PARTNER0 + SLOTS:]], -1)
+    return x.reshape(B, T, SLOTS * FEAT)
+
+
 class SeRNN(nn.Module):
     def __init__(self, cfg: dict, geom, d_video: int, d_q: int, seed: int, emb=None):
         super().__init__()
@@ -33,23 +50,34 @@ class SeRNN(nn.Module):
             out_mask[outs] = 1
         elif m["io"] != "all":
             raise ValueError(f"unknown model.io {m['io']}")
+        self.slot_shuffle = bool(m.get("slot_shuffle", False))   # augmentation (training only): random order of the 6 object slots
+        self._force_shuffle = False                              # analysis switch: shuffle also at evaluation time
+        od = int(m.get("obj_dim", 0))                            # shared per-object encoder (annotation input only): 37 -> od per slot, same weights for all 6 slots
+        self.objmode = m.get("obj_mode", "concat")               # "concat" (6*od, keeps the slot positions) | "pool" (sum and max over slots, order-free)
+        self.objenc = None
+        d_video_eff = d_video
+        if (od or self.slot_shuffle) and d_video != SLOTS * FEAT:
+            raise ValueError("model.slot_shuffle / model.obj_dim need the annotation input (6 slots x 37 features)")
+        if od:
+            self.objenc = nn.Sequential(nn.Linear(FEAT, od), nn.ReLU())
+            d_video_eff = SLOTS * od if self.objmode == "concat" else 2 * od
         vd = int(m.get("video_dim", 0))                        # optional learned linear reduction of the per-frame video feature (0 = off)
-        self.vproj = nn.Linear(d_video, vd) if vd else None
+        self.vproj = nn.Linear(d_video_eff, vd) if vd else None
         self.qenc = m.get("q_encoder", "mean")               # "mean" (default, question = one fixed vector) | "positional" | "seq_core" (word-order encodings, no LSTM/GRU)
-        d_in = (vd or d_video) + d_q
+        d_in = (vd or d_video_eff) + d_q
         if self.qenc == "mean_embed":                            # control: word embeddings learned from THIS dataset's questions (answers only), averaged
             if emb is None:
                 raise ValueError("model.q_encoder needs data.question_encoding = word_seq")
             qd = int(m.get("q_dim", 300))
             self.qemb = nn.Embedding(len(emb), qd, padding_idx=0)
-            d_in = (vd or d_video) + qd
+            d_in = (vd or d_video_eff) + qd
         elif self.qenc != "mean":
             if emb is None:
                 raise ValueError("model.q_encoder needs data.question_encoding = word_seq")
             qd = int(m.get("q_dim", 32))
             self.qemb = nn.Embedding.from_pretrained(torch.tensor(emb, dtype=torch.float32), freeze=True, padding_idx=0)
             self.qproj = nn.Linear(self.qemb.embedding_dim, qd)
-            d_in = (vd or d_video) + (d_q * qd if self.qenc == "positional" else qd)
+            d_in = (vd or d_video_eff) + (d_q * qd if self.qenc == "positional" else qd)
         self.core = RecurrentCore(cfg, d_in, seed, in_mask)
         self.register_buffer("out_mask", torch.ones(m["units"]) if out_mask is None else torch.as_tensor(out_mask))
         self.readout = nn.Linear(m["units"], N_CLASSES)
@@ -61,6 +89,13 @@ class SeRNN(nn.Module):
         p_drop = float(self.cfg["model"].get("video_dropout", 0.0))     # regularisation: dropout on the video features (training only)
         if self.training and p_drop > 0:
             video = torch.nn.functional.dropout(video, p_drop, True)
+        if self.slot_shuffle and (self.training or self._force_shuffle):
+            video = permute_slots(video)
+        if self.objenc is not None:
+            B, T, _ = video.shape
+            x5 = video.reshape(B, T, SLOTS, FEAT)
+            h = self.objenc(x5) * x5[..., PRESENT:PRESENT + 1]            # empty slots contribute nothing
+            video = h.reshape(B, T, -1) if self.objmode == "concat" else torch.cat([h.sum(2), h.max(2).values], -1)
         if self.vproj is not None:
             video = self.vproj(video)
         if self.qenc == "mean":
