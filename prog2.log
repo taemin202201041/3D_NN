@@ -98,3 +98,29 @@ START e32_ann_prog2 fixed_B1 s3 19:34:34
 [e32_ann_prog2__relayout_full__s3__360c54c4] done in 164.4s  val=0.4434  test=0.4458
 END e32_ann_prog2 relayout_full s3 19:36:10
 START e32_ann_prog2 position_B2 s3 19:36:10
+[e32_ann_prog2__fixed_A__s3__81472b88] done in 177.9s  val=0.4276  test=0.4372
+END e32_ann_prog2 fixed_A s3 19:36:34
+START e32_ann_prog2 position_B1 s3 19:36:34
+[e32_ann_prog2__fixed_B2__s3__3ad9463a] done in 170.8s  val=0.4294  test=0.4356
+END e32_ann_prog2 fixed_B2 s3 19:36:38
+START e32_ann_prog2 swap_B1 s3 19:36:38
+[e32_ann_prog2__fixed_B1__s3__67d502dc] done in 157.3s  val=0.4263  test=0.4409
+END e32_ann_prog2 fixed_B1 s3 19:37:16
+START e32_ann_prog2 lstm s3 19:37:16
+[e32_ann_prog2__lstm__s3__93cb4316] done in 63.9s  val=0.4393  test=0.4498
+END e32_ann_prog2 lstm s3 19:38:25
+START e32_ann_prog2 linear_rnn s3 19:38:25
+[e32_ann_prog2__position_B2__s3__b8beb60a] done in 193.6s  val=0.4363  test=0.4382
+END e32_ann_prog2 position_B2 s3 19:39:29
+START e32_ann_prog2 relu_nopen s3 19:39:29
+[e32_ann_prog2__swap_B1__s3__b197b4bd] done in 166.3s  val=0.4323  test=0.4343
+END e32_ann_prog2 swap_B1 s3 19:39:30
+START e32_ann_prog2 question_only s3 19:39:30
+[e32_ann_prog2__position_B1__s3__035d6a17] done in 180.5s  val=0.4369  test=0.4494
+END e32_ann_prog2 position_B1 s3 19:39:40
+[e32_ann_prog2__linear_rnn__s3__feddf071] done in 100.6s  val=0.3852  test=0.3965
+END e32_ann_prog2 linear_rnn s3 19:40:10
+[e32_ann_prog2__relu_nopen__s3__232b6a6b] done in 92.7s  val=0.43  test=0.4449
+END e32_ann_prog2 relu_nopen s3 19:41:07
+[e32_ann_prog2__question_only__s3__99084d7e] done in 127.4s  val=0.311  test=0.3081
+END e32_ann_prog2 question_only s3 19:41:42
